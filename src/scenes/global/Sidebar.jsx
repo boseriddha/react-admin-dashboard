@@ -33,7 +33,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState("false");
@@ -61,7 +61,9 @@ const Sidebar = () => {
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
           <MenuItem
-            onClick={() => setIsCollapsed(!isCollapsed)}
+            onClick={() => {
+              setIsCollapsed(!isCollapsed);
+            }}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
@@ -78,7 +80,11 @@ const Sidebar = () => {
                 <Typography variant="h3" color={colors.grey[100]}>
                   ADMINIS
                 </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                <IconButton
+                  onClick={() => {
+                    setIsCollapsed(!isCollapsed);
+                  }}
+                >
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
