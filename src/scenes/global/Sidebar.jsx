@@ -203,7 +203,7 @@ const Sidebar = (props) => {
             />
             <Item
               title="Pie Chart"
-              to="/"
+              to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
